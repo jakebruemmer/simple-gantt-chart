@@ -17,7 +17,7 @@ Naming conventions:
 /* ===== Sheet Creation Functions ===== */
 /*
 Create a new sheet with a Gantt Chart area. Default start and end dates are
-currently given. 
+currently given.
 
 Params: none
 
@@ -34,6 +34,7 @@ function create_sheet() {
   _hide_columns(sheet);
   _format_project_area(sheet);
   _set_frozen_rows_and_cols(sheet);
+  _insert_images(sheet);
   format_category_names();
 }
 
@@ -53,7 +54,7 @@ function _get_project_plan_sheet() {
 
 /* ===== Protected Ranges Functions ===== */
 
-/* 
+/*
 Protects the areas that aren't in the Gantt Chart area for user input. This function is
 called in the format_category_names() sheet. It also removes editing ability for all
 users other than user that calls the function.
@@ -167,7 +168,7 @@ function _write_category_names() {
 /*
 Format the task names. These are the names of things that begin with '-'. The format
 for each of these items is to not be bolded, not have a background, and to have the same
-borders as the project area. This function is called in the format_category_names() 
+borders as the project area. This function is called in the format_category_names()
 function.
 
 Params: none
@@ -379,7 +380,7 @@ for all project creation purposes.
 
 Params: 'sheet' the sheet being edited {Sheet}, 'start' the start date in integer form,
         {int}, 'end' the end date in integer form {int}
-        
+
 Returns: 'last_cell' the final cell in the range of the project {Range}
 */
 function _set_gantt_range(sheet, start, end) {
@@ -431,7 +432,7 @@ Set the days remaining values cell in the top left of the spreadsheet.
 
 Params: 'sheet' the sheet being edited {Sheet}, 'last_cell' the last cell of the date values
         in the Gantt Chart {Range}
-        
+
 Returns: none
 */
 function _set_days_remaining_values(sheet, last_cell) {
@@ -449,11 +450,11 @@ function _set_days_remaining_values(sheet, last_cell) {
 /*
 Create all of the dates at the top of the Gantt chart according to the specified inputs.
 
-Params: 'sheet' the sheet being edited {Sheet}, 'start' the start date of the range as an 
+Params: 'sheet' the sheet being edited {Sheet}, 'start' the start date of the range as an
         integer {int}, 'end' the end date of the range as an integer {int}
 
 Returns: none
-*/ 
+*/
 function _create_dates(sheet, start, end) {
   var start_cell = sheet.getRange('K6');
   var cur_date = start;
@@ -500,7 +501,7 @@ function _format_project_area(sheet) {
   var gantt_chart = sheet.getRange('gantt_chart');
   var format_req = {
     "requests": [{
-      "addConditionalFormatRule": { 
+      "addConditionalFormatRule": {
         "rule": {
           "ranges": [{
             "sheetId": sheet.getSheetId(),
@@ -525,11 +526,11 @@ function _format_project_area(sheet) {
               }
             }
           }
-        }, 
+        },
         "index": 0
       }
     }, {
-      "addConditionalFormatRule": { 
+      "addConditionalFormatRule": {
         "rule": {
           "ranges": [{
             "sheetId": sheet.getSheetId(),
@@ -573,4 +574,18 @@ function _set_frozen_rows_and_cols(sheet) {
   sheet.setFrozenRows(6);
   sheet.setFrozenColumns(10);
   sheet.setColumnWidth(1, 15);
+}
+
+/*
+Insert the images that will be assigned to the Sheet's functions.
+
+Params: 'sheet' the Sheet being edited {Sheet}
+
+Returns: none
+*/
+function _insert_images(sheet) {
+  sheet.insertImage('https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/add_button.png', 7, 1);
+  sheet.insertImage('https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/delete_icon.png', 8, 1);
+  sheet.insertImage('https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/format_brush.png', 9, 1);
+  sheet.insertImage('https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/sort_direction.png', 10, 1);
 }

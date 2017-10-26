@@ -13,13 +13,12 @@ Gantt Chart's shouldn't be hard to put together quickly, but can take a lot of t
 3. [Add the Google Sheet API in your API console](https://github.com/jakebruemmer/simple-gantt-chart/blob/master/Google-API-Enabling.gif)
 4. [Paste the code from `GanttChart_v2.gs` in this repository into your script editor (doesn't matter what you call the file)](https://github.com/jakebruemmer/simple-gantt-chart/blob/master/Copy%20Code.gif)
 5. [Run the `create_sheet` function in the script](https://github.com/jakebruemmer/simple-gantt-chart/blob/master/Create%20Sheet.gif)
-6. Insert all of the images from this repository into your Sheet
-7. [Assign the following scripts to each image (can copy/paste the function names)](https://github.com/jakebruemmer/simple-gantt-chart/blob/master/Insert-Task.gif)
+6. [Resize and move the images and assign the following scripts to each image (can copy/paste the function names)](https://github.com/jakebruemmer/simple-gantt-chart/blob/master/Insert-Task.gif)
   * Paintbrush - `format_category_names`
   * Add - `insert_task`
   * Sort - `sort_project_area`
   * Trash - `delete_row`
-  
+
 # Instructions for Use
 
 Enter a `1` in the project area to make a blue square and a `3` to make a green square. There is conditional formatting that will color in the cell.
