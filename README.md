@@ -8,22 +8,20 @@ Gantt Chart's shouldn't be hard to put together quickly, but can take a lot of t
 
 # Steps to Install
 
-1. Open the script editor on your Google Sheet:
-![alt text](https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/Script-Editor.gif)
-2. Add the advanced Google Sheet API in the Script Editor:
-![alt text](https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/Google-Sheets-v4-API.gif)
-3. Add the Google Sheet API in your API console:
-![alt text](https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/Google-API-Enabling.gif)
-4. Paste the code from `GanttChart_v2.gs` in this repository into your script editor (doesn't matter what you call the file):
-![alt text](https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/Copy%20Code.gif)
-5. Run the `create_sheet` function in the script:
-![alt text](https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/Create%20Sheet.gif)
-6. Insert all of the images from this repository into your Sheet.
-7. Assign the following scripts to each image (can copy/paste the function names):
+1. [Open the script editor on your Google Sheet](https://github.com/jakebruemmer/simple-gantt-chart/master/Script-Editor.gif)
+2. [Add the advanced Google Sheet API in the Script Editor](https://github.com/jakebruemmer/simple-gantt-chart/master/Google-Sheets-v4-API.gif)
+3. [Add the Google Sheet API in your API console](https://github.com/jakebruemmer/simple-gantt-chart/master/Google-API-Enabling.gif)
+4. [Paste the code from `GanttChart_v2.gs` in this repository into your script editor (doesn't matter what you call the file)](https://github.com/jakebruemmer/simple-gantt-chart/master/Copy%20Code.gif)
+5. [Run the `create_sheet` function in the script](https://github.com/jakebruemmer/simple-gantt-chart/master/Create%20Sheet.gif)
+6. Insert all of the images from this repository into your Sheet
+7. [Assign the following scripts to each image (can copy/paste the function names)](https://github.com/jakebruemmer/simple-gantt-chart/master/Insert-Task.gif)
   * Paintbrush - `format_category_names`
   * Add - `insert_task`
   * Sort - `sort_project_area`
   * Trash - `delete_row`
-![alt text](https://raw.githubusercontent.com/jakebruemmer/simple-gantt-chart/master/Insert-Task.gif)
   
 # Instructions for Use
+
+Enter a `1` in the project area to make a blue square and a `3` to make a green square. There is conditional formatting that will color in the cell.
+
+To make a category, just enter text in column H that doesn't start with `-`. Everything that starts with `-` is considered a task under the category.
